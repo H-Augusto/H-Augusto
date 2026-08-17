@@ -1,16 +1,68 @@
-## Hi there 👋
+<h1 align="center">Olá, eu sou o Heitor Augusto 👋</h1>
 
-<!--
-**H-Augusto/H-Augusto** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<p align="center">
+  Desenvolvedor Backend | Java & SQL
+</p>
 
-Here are some ideas to get you started:
+<p align="center">
+  <a href="https://www.linkedin.com/in/heitor-augusto-roque-paulista-465349359/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### 🧑‍💻 Sobre mim
+
+Sou desenvolvedor com foco em **backend**, com experiência prática no desenvolvimento de aplicações usando **Java** e **SQL**. Gosto de construir soluções sólidas, entender a fundo a lógica por trás dos sistemas e escrever código organizado e de fácil manutenção.
+
+Estou sempre em busca de evoluir tecnicamente e ampliar meu leque de ferramentas para entregar soluções cada vez melhores.
+
+---
+
+### 🚀 Tecnologias que uso
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="SQL"/>
+  <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA"/>
+  <img src="https://img.shields.io/badge/MySQL%20Workbench-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL Workbench"/>
+  <img src="https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white" alt="Visual Studio"/>
+</p>
+
+---
+
+### 📚 O que estou aprendendo
+
+Atualmente estou me aprofundando em **TypeScript**, expandindo meus conhecimentos para o desenvolvimento com tipagem estática em JavaScript e me preparando para atuar de forma mais completa em projetos full stack.
+
+<p align="left">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+</p>
+
+---
+
+### 🔗 Redes sociais
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/heitor-augusto-roque-paulista-465349359/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+</p>
+
+---
+
+### 📊 Estatísticas do GitHub
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=SEU_USUARIO&show_icons=true&theme=default&count_private=true" alt="Estatísticas do GitHub" height="165"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SEU_USUARIO&layout=compact&theme=default" alt="Linguagens mais usadas" height="165"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=SEU_USUARIO&theme=default" alt="Streak do GitHub"/>
+</p>
+
+---
+
+<p align="center"><i>Aberto a novas oportunidades e conexões na área de backend 🚀</i></p>
