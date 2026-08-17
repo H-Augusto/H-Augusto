@@ -51,12 +51,3 @@ Atualmente estou me aprofundando em **TypeScript**, expandindo meus conhecimento
 </p>
 
 ---
-
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=SEU_USUARIO&theme=default" alt="Streak do GitHub"/>
-</p>
-
----
-
-<p align="center"><i>Aberto a novas oportunidades e conexões na área de backend 🚀</i></p>
