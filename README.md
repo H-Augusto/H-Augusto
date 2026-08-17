@@ -1,4 +1,4 @@
-<h1 align="center">Olá, eu sou o Heitor Augusto 👋</h1>
+<h1 align="center">Olá, eu sou o Heitor Augusto </h1>
 
 <p align="center">
   Desenvolvedor Backend | Java & SQL
@@ -12,7 +12,7 @@
 
 ---
 
-### 🧑‍💻 Sobre mim
+### Sobre mim
 
 Sou desenvolvedor com foco em **backend**, com experiência prática no desenvolvimento de aplicações usando **Java** e **SQL**. Gosto de construir soluções sólidas, entender a fundo a lógica por trás dos sistemas e escrever código organizado e de fácil manutenção.
 
@@ -20,7 +20,7 @@ Estou sempre em busca de evoluir tecnicamente e ampliar meu leque de ferramentas
 
 ---
 
-### 🚀 Tecnologias que uso
+### Tecnologias que uso
 
 <p align="left">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
@@ -32,7 +32,7 @@ Estou sempre em busca de evoluir tecnicamente e ampliar meu leque de ferramentas
 
 ---
 
-### 📚 O que estou aprendendo
+### O que estou aprendendo
 
 Atualmente estou me aprofundando em **TypeScript**, expandindo meus conhecimentos para o desenvolvimento com tipagem estática em JavaScript e me preparando para atuar de forma mais completa em projetos full stack.
 
@@ -42,7 +42,7 @@ Atualmente estou me aprofundando em **TypeScript**, expandindo meus conhecimento
 
 ---
 
-### 🔗 Redes sociais
+### Redes sociais
 
 <p align="left">
   <a href="https://www.linkedin.com/in/heitor-augusto-roque-paulista-465349359/" target="_blank">
@@ -52,7 +52,7 @@ Atualmente estou me aprofundando em **TypeScript**, expandindo meus conhecimento
 
 ---
 
-### 📊 Estatísticas do GitHub
+### Estatísticas do GitHub
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=SEU_USUARIO&show_icons=true&theme=default&count_private=true" alt="Estatísticas do GitHub" height="165"/>
