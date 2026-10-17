@@ -1,9 +1,9 @@
 /**
- * Paleta única do perfil: cinza + verde escuro.
- * Nada de neon — tudo em tons de cinza com verde escuro como único acento.
+ * Paleta do perfil — tom principal: preto.
+ * Fundo #0d1117, texto #c9d1d9, único acento #58a6ff (azul).
  */
 export const theme = {
-  /** Fundo principal (quase preto) */
+  /** Preto — fundo principal */
   bg: "#0d1117",
   /** Painel / barra de título */
   panel: "#161b22",
@@ -11,12 +11,12 @@ export const theme = {
   border: "#21262d",
   /** Cinza do texto secundário */
   gray: "#8b949e",
-  /** Cinza claro (texto de comando) */
-  grayLight: "#c9d1d9",
-  /** Verde escuro — único acento */
-  green: "#2ea043",
-  /** Verde escuro mais profundo (badges) */
-  greenDark: "#238636",
+  /** Texto principal (cinza claro) */
+  text: "#c9d1d9",
+  /** Acento — azul */
+  accent: "#58a6ff",
+  /** Azul mais profundo (badges, contraste) */
+  accentDeep: "#1f6feb",
 } as const;
 
 export const MONO =

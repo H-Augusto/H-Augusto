@@ -2,8 +2,10 @@ import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { renderToStaticMarkup } from "react-dom/server";
-import { buildReadme, type RepoLangs } from "./App";
+import { buildReadme } from "./App";
 import { LanguagesSvg, type LangRow } from "./components/Languages";
+import { ProjectsScannerSvg } from "./components/ProjectsScanner";
+import { StackTerminalSvg } from "./components/StackTerminal";
 import { TerminalSvg } from "./components/Terminal";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -39,24 +41,29 @@ interface Repo {
 async function main(): Promise<void> {
   mkdirSync(assetsDir, { recursive: true });
 
-  // 1. Terminal — sempre funciona, não depende de rede.
+  // 1. SVGs animados — sempre funcionam, não dependem de rede.
   writeFileSync(
     join(assetsDir, "terminal.svg"),
     renderToStaticMarkup(<TerminalSvg />),
   );
-  console.log("✅ assets/terminal.svg");
+  writeFileSync(
+    join(assetsDir, "stack.svg"),
+    renderToStaticMarkup(<StackTerminalSvg />),
+  );
+  writeFileSync(
+    join(assetsDir, "projects.svg"),
+    renderToStaticMarkup(<ProjectsScannerSvg />),
+  );
+  console.log("✅ assets/terminal.svg + stack.svg + projects.svg");
 
-  // 2. Dados reais do GitHub → linguagem de cada projeto + card de linguagens.
+  // 2. Dados reais do GitHub → card de linguagens.
   const repos = await gh<Repo[]>(
     "https://api.github.com/users/H-Augusto/repos?per_page=100&sort=updated",
   );
 
-  const repoLangs: RepoLangs = {};
   let langSvg: string | null = null;
 
   if (repos) {
-    for (const r of repos) repoLangs[r.name] = r.language ?? undefined;
-
     const own = repos.filter((r) => !r.fork && r.name !== "H-Augusto");
     const totals: Record<string, number> = {};
     let grand = 0;
@@ -86,7 +93,7 @@ async function main(): Promise<void> {
     langSvg !== null || existsSync(join(assetsDir, "languages.svg"));
 
   // 3. README final.
-  const readme = buildReadme({ includeLanguages, repoLangs });
+  const readme = buildReadme({ includeLanguages });
   writeFileSync(join(root, "README.md"), readme);
   console.log("✅ README.md");
 }

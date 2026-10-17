@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
@@ -9,8 +10,6 @@ import { renderToStaticMarkup } from "react-dom/server";
 const html = (node: ReactNode): string =>
   renderToStaticMarkup(node).replace(/<link rel="preload"[^>]*\/>/g, "");
 
-export type RepoLangs = Record<string, string | undefined>;
-
 /* ------------------------------------------------------------------ */
 /* URLs e helpers                                                      */
 /* ------------------------------------------------------------------ */
@@ -19,14 +18,14 @@ const STATS =
   "https://github-readme-stats.vercel.app/api?username=H-Augusto" +
   "&show_icons=true&count_private=true&hide=stars,issues,prs&hide_rank=true" +
   "&theme=dark" +
-  "&bg_color=0d1117&text_color=8b949e&number_color=8b949e" +
-  "&title_color=2ea043&icon_color=2ea043&border_color=21262d";
+  "&bg_color=0d1117&text_color=8b949e&number_color=c9d1d9" +
+  "&title_color=58a6ff&icon_color=58a6ff&border_color=21262d";
 
-type BadgeTone = "gray" | "green";
+type BadgeTone = "gray" | "accent";
 
-/** Badge no estilo for-the-badge, sempre cinza ou verde escuro. */
+/** Badge no estilo for-the-badge — cinza ou azul (tom principal: preto). */
 const badge = (label: string, tone: BadgeTone, logo?: string): string => {
-  const color = tone === "gray" ? "30363d" : "238636";
+  const color = tone === "gray" ? "30363d" : "1f6feb";
   const params = new URLSearchParams({
     style: "for-the-badge",
     labelColor: "161b22",
@@ -43,9 +42,7 @@ const Badge = ({ label, tone, logo }: {
   label: string;
   tone: BadgeTone;
   logo?: string;
-}) => (
-  <img src={badge(label, tone, logo)} alt={label} />
-);
+}) => <img src={badge(label, tone, logo)} alt={label} />;
 
 /* ------------------------------------------------------------------ */
 /* Dados reais (currículo + projetos do GitHub)                        */
@@ -73,34 +70,28 @@ const FOCUS: Array<[string, string | undefined]> = [
 interface Project {
   name: string;
   desc: string;
-  fallbackLang: string;
 }
 
 const projects: Project[] = [
   {
     name: "Sistema-Oficina",
     desc: "API REST com Node.js + TypeScript — arquitetura em camadas, Zod, bcrypt e MySQL",
-    fallbackLang: "TypeScript",
   },
   {
     name: "piHole-Cyber-Security-Learning",
     desc: "Laboratório de estudo em redes e cibersegurança com Pi-hole",
-    fallbackLang: "Shell",
   },
   {
     name: "Health-Data-Registration",
     desc: "Registro de dados de saúde em PHP — PDO, prepared statements e transações",
-    fallbackLang: "PHP",
   },
   {
     name: "Desafio_dev",
     desc: "Desafio técnico para vaga — lógica de programação",
-    fallbackLang: "JavaScript",
   },
   {
     name: "Cadastro-aluno",
     desc: "Orientação a objetos em Java — cadastro, médias e aprovação",
-    fallbackLang: "Java",
   },
 ];
 
@@ -130,67 +121,53 @@ const Stats = () => (
 
 const LanguagesCard = () => (
   <div align="center">
-    <img
-      src="assets/languages.svg"
-      alt="Linguagens mais usadas"
-      width="440"
-    />
+    <img src="assets/languages.svg" alt="Linguagens mais usadas" width="440" />
+  </div>
+);
+
+const StackTerminal = () => (
+  <div align="center">
+    <img src="assets/stack.svg" alt="./stack --list" width="680" />
   </div>
 );
 
 const Stack = () => (
   <div align="center">
-    <Badge label="Node.js" tone="gray" logo="nodedotjs" />
-    {" "}
-    <Badge label="JavaScript" tone="gray" logo="javascript" />
-    {" "}
-    <Badge label="TypeScript" tone="gray" logo="typescript" />
-    {" "}
-    <Badge label="Java" tone="gray" logo="openjdk" />
-    {" "}
-    <Badge label="SQL" tone="gray" logo="mysql" />
-    {" "}
-    <Badge label="PHP" tone="gray" logo="php" />
+    {STACK.map(([label, logo], i) => (
+      <Fragment key={label}>
+        {i === 6 && <br />}
+        {i > 0 && i !== 6 && " "}
+        <Badge label={label} tone="gray" logo={logo} />
+      </Fragment>
+    ))}
     <br />
-    <Badge label="HTML5" tone="gray" logo="html5" />
-    {" "}
-    <Badge label="CSS3" tone="gray" logo="css3" />
-    {" "}
-    <Badge label="Git" tone="gray" logo="git" />
-    {" "}
-    <Badge label="GitHub" tone="gray" logo="github" />
-    <br />
-    <Badge label="Linux" tone="green" logo="linux" />
-    {" "}
-    <Badge label="Redes" tone="green" logo="cisco" />
-    {" "}
-    <Badge label="Cibersegurança" tone="green" />
+    {FOCUS.map(([label, logo], i) => (
+      <Fragment key={label}>
+        {i > 0 && " "}
+        <Badge label={label} tone="accent" logo={logo} />
+      </Fragment>
+    ))}
   </div>
 );
 
-const Projects = ({ repoLangs }: { repoLangs: RepoLangs }) => (
-  <table>
-    <thead>
-      <tr>
-        <th>Projeto</th>
-        <th>Descrição</th>
-        <th>Linguagem</th>
-      </tr>
-    </thead>
-    <tbody>
-      {projects.map((p) => (
-        <tr key={p.name}>
-          <td>
-            <a href={`https://github.com/H-Augusto/${p.name}`}>{p.name}</a>
-          </td>
-          <td>{p.desc}</td>
-          <td>
-            <code>{repoLangs[p.name] ?? p.fallbackLang}</code>
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+const ProjectsScanner = () => (
+  <div align="center">
+    <img src="assets/projects.svg" alt="Scanner dos projetos" width="700" />
+  </div>
+);
+
+/** Chips clicáveis no estilo "./comando" — com tooltip ao passar o mouse. */
+const ProjectChips = () => (
+  <p align="center">
+    {projects.map((p, i) => (
+      <Fragment key={p.name}>
+        {i > 0 && (i === 3 ? <br /> : " ")}
+        <a href={`https://github.com/H-Augusto/${p.name}`} title={p.desc}>
+          <code>./{p.name}</code>
+        </a>
+      </Fragment>
+    ))}
+  </p>
 );
 
 const Footer = () => (
@@ -217,28 +194,27 @@ const Footer = () => (
 /* Composição do README                                                */
 /* ------------------------------------------------------------------ */
 
-export function buildReadme(opts: {
-  includeLanguages: boolean;
-  repoLangs: RepoLangs;
-}): string {
+export function buildReadme(opts: { includeLanguages: boolean }): string {
   const parts: string[] = [
     "# Heitor-Augusto",
     html(<Header />),
     html(<Terminal />),
-    "## 📊 Estatísticas",
+    "## Estatísticas",
     html(<Stats />),
   ];
 
   if (opts.includeLanguages) {
-    parts.push("## 🧠 Linguagens");
+    parts.push("## Linguagens");
     parts.push(html(<LanguagesCard />));
   }
 
-  parts.push("## 🛠️ Stack");
+  parts.push("## Stack");
+  parts.push(html(<StackTerminal />));
   parts.push(html(<Stack />));
-  parts.push("## 📁 Projetos");
-  parts.push(html(<Projects repoLangs={opts.repoLangs} />));
-  parts.push("## 📫 Contato");
+  parts.push("## Projetos");
+  parts.push(html(<ProjectsScanner />));
+  parts.push(html(<ProjectChips />));
+  parts.push("## Contato");
   parts.push(html(<Footer />));
   parts.push(
     "<!-- README gerado por src/ (React + TypeScript) — rode `npm run build` para atualizar -->"

@@ -65,7 +65,7 @@ export function LanguagesSvg({ rows }: { rows: LangRow[] }) {
         fontFamily={MONO}
         fontSize="14"
         fontWeight="600"
-        fill={theme.green}
+        fill={theme.accent}
       >
         Mais usadas
       </text>
@@ -89,7 +89,7 @@ export function LanguagesSvg({ rows }: { rows: LangRow[] }) {
               y={top + 11}
               fontFamily={MONO}
               fontSize="12"
-              fill={theme.grayLight}
+              fill={theme.text}
               textAnchor="end"
             >
               {r.percent.toFixed(1)}%
@@ -108,7 +108,7 @@ export function LanguagesSvg({ rows }: { rows: LangRow[] }) {
               width="0"
               height="6"
               rx="3"
-              fill={theme.green}
+              fill={theme.accent}
             >
               <animate
                 attributeName="width"

@@ -31,8 +31,8 @@ const lines: Line[] = [
   {
     y: 60,
     parts: [
-      { text: "$ ", color: theme.green },
-      { text: "whoami", color: theme.grayLight },
+      { text: "$ ", color: theme.accent },
+      { text: "whoami", color: theme.text },
     ],
     end: 84,
     begin: 0.4,
@@ -53,8 +53,8 @@ const lines: Line[] = [
   {
     y: 108,
     parts: [
-      { text: "$ ", color: theme.green },
-      { text: "cat foco.txt", color: theme.grayLight },
+      { text: "$ ", color: theme.accent },
+      { text: "cat foco.txt", color: theme.text },
     ],
     end: 132,
     begin: 2.3,
@@ -75,8 +75,8 @@ const lines: Line[] = [
   {
     y: 156,
     parts: [
-      { text: "$ ", color: theme.green },
-      { text: "stack && status", color: theme.grayLight },
+      { text: "$ ", color: theme.accent },
+      { text: "stack && status", color: theme.text },
     ],
     end: 156,
     begin: 4.6,
@@ -86,7 +86,7 @@ const lines: Line[] = [
     y: 180,
     parts: [
       { text: "node  ts  java  php  mysql  |  ", color: theme.gray },
-      { text: "online", color: theme.green },
+      { text: "online", color: theme.accent },
     ],
     end: 330,
     begin: 5.7,
@@ -168,7 +168,7 @@ export function TerminalSvg() {
           stroke={theme.border}
           strokeWidth="1"
         />
-        <circle cx="18" cy="17" r="5" fill={theme.greenDark} />
+        <circle cx="18" cy="17" r="5" fill={theme.accentDeep} />
         <circle cx="36" cy="17" r="5" fill={theme.gray} opacity="0.3" />
         <circle cx="54" cy="17" r="5" fill={theme.gray} opacity="0.3" />
         <text
@@ -191,7 +191,7 @@ export function TerminalSvg() {
                 </tspan>
               ))}
               {i === lines.length - 1 && (
-                <tspan fill={theme.green} opacity="0">
+                <tspan fill={theme.accent} opacity="0">
                   ▌
                   <animate
                     attributeName="opacity"
